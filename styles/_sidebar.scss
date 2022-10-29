@@ -1,0 +1,70 @@
+.sidebar {
+    padding: 1.2rem 2.5rem;
+    background-color: #f5f5f6;
+    width: 15vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    &__container {
+        display: flex;
+        align-items: center;
+        margin: 2rem 0;
+    }
+    &__text{
+        font-size: 2rem;
+        text-transform: uppercase;
+        margin: 6rem 0 1rem 0 ;
+        cursor: pointer;
+        color: grey;
+    }
+    a {
+        font-size: 1.8rem;
+        cursor: pointer;
+        text-decoration: none;
+        color: black;
+    }
+    h4 {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+      
+}
+.logo {
+   @include FlexSpace;
+    margin: 2rem 0 5rem 0;
+}
+.message {
+    background-color: #ffffff;
+    padding: 1.2rem 2.5rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 4rem;
+
+    &__text {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        margin-bottom: 1.4rem;
+        color: grey;
+    }
+
+    h6 {
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+    }
+}
+.fa-house , .fa-list-check, .fa-compact-disc, .fa-user, .fa-chart-simple, .fa-heart, .fa-list, .fa-play{
+    font-size: 1.6rem;
+    color: #4141be;
+    margin-right: 1rem;
+    width: 2rem;
+}
+.fa-bars {
+    font-size: 3rem;
+    color: #4141be;
+}

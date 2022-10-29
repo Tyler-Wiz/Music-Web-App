@@ -1,0 +1,10 @@
+@import './variables';
+
+.button{
+    @include ButtonGeneral(#4141be, white )
+}
+
+
+.button_NoBg {
+   @include ButtonGeneral(white,black)
+}

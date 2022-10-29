@@ -1,0 +1,150 @@
+.main {
+    width: calc(100vw - 15vw);
+    left: 15vw;
+    position: relative;
+    padding: 2rem;
+
+    h2 {
+        @include HeroHeader2(1.8rem);
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+.loading {
+    position: absolute;
+    top: 50vh;
+    left: 40vw;
+}
+
+.slide_button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0rem 0 1rem 0;
+}
+.fa-chevron-left,
+.fa-chevron-right {
+    font-size: 1.6rem;
+    font-weight: 700;
+    background-color: #f5f5f6;
+    color: #4141be;
+    margin-right: 2rem;
+    padding: .8rem 1rem;
+    border-radius: .8rem;
+    cursor: pointer;
+}
+
+.trending{
+     margin-bottom: 6rem;
+     cursor: pointer;
+
+    &__image {
+        @include HeroImage(21rem, 21rem);
+        margin-bottom:.5rem;
+    }
+    &__artist {
+        @include HeroArtist;
+    }
+    &__track {
+        @include HeroTrack
+    }
+
+
+    @media (min-width: 1068px) and  (max-width: 768px)  {
+        &__image {
+          @include HeroImage(30rem, 30rem);
+                margin-bottom: .5rem;
+                }
+        }
+}
+
+.new {
+    @include FlexCenterWrap;
+     margin-bottom: 5rem;
+
+    &__container {
+        margin-bottom: 7rem;
+    }
+    &__image {
+        @include HeroImage(21rem, 21rem)
+    }
+    &__artist {
+        @include HeroArtist;
+    }
+    &__track {
+        @include HeroTrack
+    }
+}
+
+.playlist {
+    &__name {
+        @include HeroTrack
+    }
+
+    &__author {
+        @include HeroArtist;
+    }
+}
+
+.chartAdsArea {
+    @include FlexSpace;
+    padding-right: 3rem;
+    margin-bottom: 4rem;
+}
+
+.chartAds {
+    margin-left: 5rem;
+}
+
+.chart {
+    width: 70%;
+    padding-top: 5rem;
+   
+    h2 {
+        @include HeroHeader2(2.5rem);
+        font-weight: 700;
+        padding: .4rem 1rem;
+        // text-align: center;
+    }
+    &__container {
+        @include FlexSpace;
+        padding: .6rem 1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #f5f5f6;
+            border-radius: 1rem;
+        }
+    }
+    &__artist {
+        @include HeroArtist;
+        width: 50%;
+        text-transform: capitalize;
+    }
+
+    &__track {
+        @include HeroTrack;
+        width: 20rem;
+        margin-left: 1rem;
+        text-transform: capitalize;
+    }
+
+    &__position {
+        width: 1.6rem;
+        font-size: 1.5rem;
+        margin-right: 1rem;
+        font-weight: 500;
+    }
+
+    &__more {
+        font-size: 1.4rem;
+        font-weight: 600;
+        border: 1px solid #4141be;
+        padding: 1.4rem 4rem;
+        cursor: pointer;
+        width: 10vw;
+        margin: 2rem auto;
+    }
+}

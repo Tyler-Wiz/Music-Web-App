@@ -1,0 +1,62 @@
+@mixin ButtonGeneral ($background, $color) {
+    padding: .6rem 1.6rem;
+    margin-right: 1rem;
+    border-radius: .6rem;
+    border: none;
+    font-family: Poppins, sans-serif;
+    font-size: 1.3rem;
+    background-color: $background;
+    color: $color;
+    cursor: pointer;
+}
+
+@mixin FlexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin FlexSpace {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin FlexCenterMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin FlexCenterWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@mixin HeroImage($width, $height) {
+    min-width: $width;
+    min-height: $height;
+    border-radius: .5rem;
+    object-fit: cover;
+}
+
+@mixin HeroArtist {
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+@mixin HeroTrack {
+    font-size: 1.6rem;
+    margin: .5rem 0;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+@mixin HeroHeader2($size) {
+    font-size: $size;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}

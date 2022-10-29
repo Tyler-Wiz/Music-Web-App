@@ -1,0 +1,355 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Crimson Pro", serif;
+  font-size: 10px;
+}
+
+.button {
+  padding: 0.6rem 1.6rem;
+  margin-right: 1rem;
+  border-radius: 0.6rem;
+  border: none;
+  font-family: Poppins, sans-serif;
+  font-size: 1.3rem;
+  background-color: #4141be;
+  color: white;
+  cursor: pointer;
+}
+
+.button_NoBg {
+  padding: 0.6rem 1.6rem;
+  margin-right: 1rem;
+  border-radius: 0.6rem;
+  border: none;
+  font-family: Poppins, sans-serif;
+  font-size: 1.3rem;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.header {
+  width: 100%;
+  border-bottom: 1px solid #f5f5f6;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  width: 80%;
+  margin: 0 auto;
+}
+.header__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero_header {
+  margin-bottom: 6rem;
+}
+.hero_header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.search {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-left: 1rem;
+}
+.search__input {
+  padding: 1.5rem 4rem;
+  min-width: 40rem;
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  background-color: #f5f5f6;
+  font-size: 1.4rem;
+}
+.search__label {
+  position: absolute;
+  top: 35%;
+  left: 4%;
+}
+
+.fa-magnifying-glass {
+  font-size: 1.5rem;
+}
+
+.fa-record-vinyl {
+  font-size: 2.5rem;
+  color: #4141be;
+}
+
+.nav {
+  background-color: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav a {
+  font-size: 1.6rem;
+  margin-right: 3rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: black;
+}
+
+.sidebar {
+  padding: 1.2rem 2.5rem;
+  background-color: #f5f5f6;
+  width: 15vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.sidebar__container {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+.sidebar__text {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 6rem 0 1rem 0;
+  cursor: pointer;
+  color: grey;
+}
+.sidebar a {
+  font-size: 1.8rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.sidebar h4 {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0 5rem 0;
+}
+
+.message {
+  background-color: #ffffff;
+  padding: 1.2rem 2.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+.message__text {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+  color: grey;
+}
+.message h6 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.fa-house, .fa-list-check, .fa-compact-disc, .fa-user, .fa-chart-simple, .fa-heart, .fa-list, .fa-play {
+  font-size: 1.6rem;
+  color: #4141be;
+  margin-right: 1rem;
+  width: 2rem;
+}
+
+.fa-bars {
+  font-size: 3rem;
+  color: #4141be;
+}
+
+.main {
+  width: 85vw;
+  left: 15vw;
+  position: relative;
+  padding: 2rem;
+}
+.main h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.loading {
+  position: absolute;
+  top: 50vh;
+  left: 40vw;
+}
+
+.slide_button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0rem 0 1rem 0;
+}
+
+.fa-chevron-left,
+.fa-chevron-right {
+  font-size: 1.6rem;
+  font-weight: 700;
+  background-color: #f5f5f6;
+  color: #4141be;
+  margin-right: 2rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+
+.trending {
+  margin-bottom: 6rem;
+  cursor: pointer;
+}
+.trending__image {
+  min-width: 21rem;
+  min-height: 21rem;
+  border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+.trending__artist {
+  font-size: 1.3rem;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+.trending__track {
+  font-size: 1.6rem;
+  margin: 0.5rem 0;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+@media (min-width: 1068px) and (max-width: 768px) {
+  .trending__image {
+    min-width: 30rem;
+    min-height: 30rem;
+    border-radius: 0.5rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+}
+.new__container {
+  margin-bottom: 7rem;
+}
+.new__image {
+  min-width: 21rem;
+  min-height: 21rem;
+  border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.new__artist {
+  font-size: 1.3rem;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+.new__track {
+  font-size: 1.6rem;
+  margin: 0.5rem 0;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.playlist__name {
+  font-size: 1.6rem;
+  margin: 0.5rem 0;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.playlist__author {
+  font-size: 1.3rem;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+.chartAdsArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 3rem;
+  margin-bottom: 4rem;
+}
+
+.chartAds {
+  margin-left: 5rem;
+}
+
+.chart {
+  width: 70%;
+  padding-top: 5rem;
+}
+.chart h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+}
+.chart__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
+.chart__container:hover {
+  background-color: #f5f5f6;
+  border-radius: 1rem;
+}
+.chart__artist {
+  font-size: 1.3rem;
+  font-weight: 300;
+  text-transform: capitalize;
+  width: 50%;
+  text-transform: capitalize;
+}
+.chart__track {
+  font-size: 1.6rem;
+  margin: 0.5rem 0;
+  font-weight: 600;
+  text-transform: capitalize;
+  width: 20rem;
+  margin-left: 1rem;
+  text-transform: capitalize;
+}
+.chart__position {
+  width: 1.6rem;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  font-weight: 500;
+}
+.chart__more {
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: 1px solid #4141be;
+  padding: 1.4rem 4rem;
+  cursor: pointer;
+  width: 10vw;
+  margin: 2rem auto;
+}/*# sourceMappingURL=globals.css.map */
