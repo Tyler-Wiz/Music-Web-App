@@ -1,10 +1,8 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { AllSongsConfig } from "../modules/hooks/allSongs-config";
 import { Navigation } from "swiper";
 import "swiper/css";
-import { ThreeDots } from "react-loader-spinner";
 import Link from "next/link";
 
 const Trending = ({ trending }) => {
@@ -12,18 +10,6 @@ const Trending = ({ trending }) => {
 
   return (
     <>
-      {/* <div className="loading">
-        <ThreeDots
-          height="20"
-          width="80"
-          radius="9"
-          color="#4141be"
-          ariaLabel="three-dots-loading"
-          wrapperStyle={{}}
-          wrapperClassName=""
-          visible={isLoading}
-        />
-      </div> */}
       <div className="slide_button">
         <h2>Trending Singles</h2>
         <div className="slide_button">
@@ -56,6 +42,7 @@ const Trending = ({ trending }) => {
                     className="trending__image"
                     width={220}
                     height={220}
+                    priority
                   />
                 </Link>
                 <div className="trending__track">{trackName}</div>

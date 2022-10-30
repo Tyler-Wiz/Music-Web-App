@@ -352,4 +352,47 @@
   cursor: pointer;
   width: 10vw;
   margin: 2rem auto;
+}
+
+.lyrics {
+  font-family: Poppins, sans-serif;
+  width: 70vw;
+  margin: 4rem auto;
+  display: flex;
+  justify-content: space-between;
+}
+.lyrics p {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+.lyrics h2 {
+  font-size: 2.1rem;
+  margin: 4rem 0 0 0;
+  font-weight: 600;
+}
+
+.lyrics_wrapper {
+  display: flex;
+  width: 70vw;
+  margin: 4rem auto;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #f5f5f6;
+}
+.lyrics_wrapper__image {
+  min-width: 25rem;
+  min-height: 25rem;
+  border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 2rem;
+}
+.lyrics_wrapper__track {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 3rem;
+}
+.lyrics_wrapper__artist {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-top: 1rem;
 }/*# sourceMappingURL=globals.css.map */
