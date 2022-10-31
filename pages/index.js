@@ -48,6 +48,5 @@ export const getStaticProps = async () => {
 
   return {
     props: { trending, newRelease, chart },
-    revalidate: 60,
   };
 };

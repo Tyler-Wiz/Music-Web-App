@@ -22,7 +22,6 @@ export const getStaticPaths = async () => {
   return {
     paths,
     fallback: false,
-    revalidate: 60,
   };
 };
 
@@ -32,7 +31,6 @@ export const getStaticProps = async (context) => {
   const docSnap = await getDoc(docRef);
   return {
     props: { data: docSnap.data() },
-    revalidate: 60,
   };
 };
 
