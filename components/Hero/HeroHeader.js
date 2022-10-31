@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import { AllSongsConfig } from "../../modules/hooks/allSongs-config";
+import { pageData } from "../../data/data";
 
 export const HeroHeader = () => {
   const [filteredData, setFilteredData] = useState([]);
@@ -70,6 +71,13 @@ export const HeroHeader = () => {
             </div>
           )}
         </form>
+        <nav className="nav">
+          {pageData.map(({ name, path }) => (
+            <Link href={path} key={name}>
+              {name}
+            </Link>
+          ))}
+        </nav>
         <div>
           <ButtonWithoutBg name="Login" />
           <Button name="Sign Up" />

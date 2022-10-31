@@ -54,7 +54,10 @@ export const Header = () => {
                   let url = `${"/lyrics/" + value.id}`;
                   return (
                     <div className="dataItem" key={i}>
-                      <Link href={url} className="searchItem">
+                      <Link
+                        href={url}
+                        className="searchItem"
+                        onClick={clearInput}>
                         <Image
                           src={value.artwork}
                           width={60}

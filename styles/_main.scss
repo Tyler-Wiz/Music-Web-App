@@ -1,8 +1,8 @@
 .main {
-    width: calc(100vw - 15vw);
-    left: 15vw;
+    width: 90vw;
     position: relative;
     padding: 2rem;
+    margin: 0 auto;
 
     h2 {
         @include HeroHeader2(1.8rem);

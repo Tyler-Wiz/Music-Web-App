@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 const Hero = ({ trending, newRelease, chart }) => {
   return (
     <div>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Main trending={trending} newRelease={newRelease} chart={chart} />
     </div>
   );
