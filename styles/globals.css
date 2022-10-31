@@ -60,7 +60,6 @@
 }
 
 .search {
-  display: flex;
   position: relative;
   align-items: center;
   margin-left: 1rem;
@@ -78,6 +77,46 @@
   position: absolute;
   top: 35%;
   left: 4%;
+}
+
+.dataResult {
+  margin-top: 5px;
+  width: 100%;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+  position: absolute;
+  z-index: 9999;
+}
+.dataResult a {
+  text-decoration: none;
+  color: black;
+}
+
+.searchItem {
+  display: flex;
+  padding: 1rem;
+  border-bottom: 1px solid #f5f5f6;
+}
+.searchItem__image {
+  width: 6rem;
+  height: 6rem;
+  margin-right: 1rem;
+}
+.searchItem__track {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+.searchItem__artist {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: grey;
+}
+.searchItem__artist_image {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 60%;
 }
 
 .fa-magnifying-glass {
@@ -317,6 +356,8 @@
   align-items: center;
   padding: 0.6rem 1rem;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
 }
 .chart__container:hover {
   background-color: #f5f5f6;
@@ -344,19 +385,24 @@
   margin-right: 1rem;
   font-weight: 500;
 }
+.chart__more-container {
+  text-decoration: none;
+  color: black;
+}
 .chart__more {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 600;
   border: 1px solid #4141be;
   padding: 1.4rem 4rem;
   cursor: pointer;
-  width: 10vw;
+  width: 15vw;
   margin: 2rem auto;
+  text-align: center;
 }
 
 .lyrics {
   font-family: Poppins, sans-serif;
-  width: 70vw;
+  width: 80vw;
   margin: 4rem auto;
   display: flex;
   justify-content: space-between;
@@ -373,7 +419,7 @@
 
 .lyrics_wrapper {
   display: flex;
-  width: 70vw;
+  width: 80vw;
   margin: 4rem auto;
   padding-bottom: 2rem;
   border-bottom: 1px solid #f5f5f6;
@@ -387,12 +433,137 @@
   margin-right: 2rem;
 }
 .lyrics_wrapper__track {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin-top: 3rem;
+  margin-bottom: 0.8rem;
 }
 .lyrics_wrapper__artist {
   font-size: 2rem;
   font-weight: 300;
   margin-top: 1rem;
+  text-transform: capitalize;
+  color: #4141be;
+}
+.lyrics_wrapper__desc {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  color: grey;
+}
+
+.related {
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+.related a {
+  text-decoration: none;
+  color: black;
+}
+.related__image {
+  min-width: 21rem;
+  min-height: 21rem;
+  border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.related_desc {
+  width: 80vw;
+  margin: 0 auto;
+  font-size: 2.3rem;
+  color: #4141be;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+}
+
+.main_chart {
+  width: 80vw;
+  margin: 4rem auto;
+}
+.main_chart__desc {
+  display: flex;
+}
+.main_chart__image {
+  min-width: 25rem;
+  min-height: 25rem;
+  border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 2rem 2rem 2rem;
+}
+
+.artist_container {
+  width: 80vw;
+  margin: 4rem auto;
+}
+.artist_container__imageArea {
+  background-color: black;
+  padding: 6rem;
+  background: #0F2027;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  align-items: center;
+}
+.artist_container__image {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+}
+.artist_container__artistName {
+  font-size: 3rem;
+  color: white;
+  margin-left: 2rem;
+}
+.artist_container__songLength {
+  font-size: 1.8rem;
+  color: white;
+  margin-left: 2.3rem;
+  margin-top: 1rem;
+}
+.artist_container__lyrics {
+  font-size: 1.8rem;
+  color: grey;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.artist_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.artist_wrapper__content {
+  width: 75%;
+  margin-top: 1.6rem;
+}
+.artist_wrapper__ads {
+  margin-left: 10rem;
+  margin-top: 2.5rem;
+}
+
+.footer {
+  font-size: 2rem;
+}
+.footer__artistSort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+  border-top: 1px solid #f5f5f6;
+}
+.footer__allartist {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-right: 3rem;
+}
+.footer__artist {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-left: 1rem;
 }/*# sourceMappingURL=globals.css.map */

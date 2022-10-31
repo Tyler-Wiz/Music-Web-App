@@ -1,0 +1,23 @@
+.footer{
+    font-size: 2rem;
+
+    &__artistSort{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 3rem;
+        border-top: 1px solid #f5f5f6;
+    }
+
+        &__allartist {
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-right: 3rem;
+        }
+
+    &__artist{
+        font-size: 2rem;
+        text-transform: uppercase;
+        margin-left: 1rem;
+    }
+}

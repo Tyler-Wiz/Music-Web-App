@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { NavData, MyMusicData } from "../../data/data";
+import { NavData } from "../../data/data";
 import { Button } from "../../modules/common/Button";
 
 const Sidebar = () => {
@@ -19,15 +19,6 @@ const Sidebar = () => {
       </div>
       <ul>
         {NavData.map((item, i) => (
-          <li className="sidebar__container" key={i}>
-            <p>{item.icon}</p>
-            <Link href={item.path}>{item.name}</Link>
-          </li>
-        ))}
-      </ul>
-      <p className="sidebar__text">My Lyrics</p>
-      <ul>
-        {MyMusicData.map((item, i) => (
           <li className="sidebar__container" key={i}>
             <p>{item.icon}</p>
             <Link href={item.path}>{item.name}</Link>

@@ -21,23 +21,5 @@ export const AllSongsConfig = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const trending = allSongs.filter((item) => {
-    if (item.tag.includes("trending")) {
-      return item;
-    }
-  });
-
-  const newRelease = allSongs.filter((item) => {
-    if (item.category.includes("new")) {
-      return item;
-    }
-  });
-
-  const chart = allSongs.filter((item) => {
-    if (item.album.includes("five")) {
-      return item;
-    }
-  });
-
-  return [isLoading, trending, newRelease, chart];
+  return [allSongs];
 };

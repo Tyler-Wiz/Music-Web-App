@@ -1,0 +1,13 @@
+.main_chart{
+    width: 80vw;
+    margin: 4rem auto;
+
+    &__desc{
+        display: flex;
+    }
+
+    &__image{
+        @include HeroImage(25rem, 25rem);
+        margin: 0 2rem 2rem 2rem;
+    }
+}

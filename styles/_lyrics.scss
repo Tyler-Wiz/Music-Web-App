@@ -1,7 +1,7 @@
 
 .lyrics {
     font-family: Poppins, sans-serif;
-    width: 70vw;
+    width: 80vw;
     margin: 4rem auto;
     display: flex;
     justify-content: space-between;
@@ -19,7 +19,7 @@
 
 .lyrics_wrapper{
     display: flex;
-    width: 70vw;
+    width: 80vw;
     margin: 4rem auto;
     padding-bottom: 2rem;
     border-bottom: 1px solid #f5f5f6;
@@ -29,13 +29,48 @@
         margin-right:2rem
     }
     &__track {
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: 700;
-        margin-top: 3rem
+        margin-bottom: .8rem;
     }
     &__artist {
         font-size: 2rem;
         font-weight: 300;
-        margin-top: 1rem
+        margin-top: 1rem;
+        text-transform: capitalize;
+        color: #4141be;
     }
+    &__desc {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        margin-top: 3rem;
+        color: grey;
+        }
+}
+
+.related{
+        display: flex;
+            justify-content: space-between;
+            width: 80vw;
+            margin: 0 auto;
+            margin-bottom: 4rem;
+
+            a{
+                text-decoration: none;
+                color: black;
+            }
+
+        &__image{
+            @include HeroImage(21rem, 21rem);
+        }    
+}
+
+.related_desc{
+    width: 80vw;
+    margin: 0 auto;
+    font-size: 2.3rem;
+    color: #4141be;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
 }

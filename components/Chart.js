@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { sortArray } from "../modules/hooks/sortArray";
-import more from "../img/more.png";
+import Link from "next/link";
 
 const Chart = ({ chart }) => {
   let number = 1;
@@ -15,10 +15,9 @@ const Chart = ({ chart }) => {
       <h2>Chart</h2>
       <div>
         {featuredChart.map((item, i) => {
-          let combineId = `${item.artistName + "-" + item.trackName}`;
-          let id = combineId.replace(/\s/g, "");
+          let url = `${"/lyrics/" + item.id}`;
           return (
-            <div className="chart__container" key={i}>
+            <Link href={url} className="chart__container" key={i}>
               <div className="chart__container">
                 <p className="chart__position">0{number + i}</p>
                 <Image src={item.artwork} alt="trend" width={50} height={50} />
@@ -28,15 +27,14 @@ const Chart = ({ chart }) => {
               <div className="chart__container">
                 <i className="fa-solid fa-play"></i>
                 <i className="fa-regular fa-heart"></i>
-                <Image src={more} alt="trend" width={15} height={15} />
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>
-      <div className="chart__more-container">
+      <Link href={"/chart"} className="chart__more-container">
         <div className="chart__more">See More</div>
-      </div>
+      </Link>
     </div>
   );
 };

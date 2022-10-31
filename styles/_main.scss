@@ -112,6 +112,8 @@
         @include FlexSpace;
         padding: .6rem 1rem;
         cursor: pointer;
+        text-decoration: none;
+        color: black;
 
         &:hover {
             background-color: #f5f5f6;
@@ -137,14 +139,19 @@
         margin-right: 1rem;
         font-weight: 500;
     }
+    &__more-container{
+        text-decoration: none;
+        color: black;
+         }
 
     &__more {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         font-weight: 600;
         border: 1px solid #4141be;
         padding: 1.4rem 4rem;
         cursor: pointer;
-        width: 10vw;
+        width: 15vw;
         margin: 2rem auto;
+        text-align: center;
     }
 }

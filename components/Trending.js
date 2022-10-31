@@ -30,8 +30,6 @@ const Trending = ({ trending }) => {
         }}>
         {trending.map(
           ({ artistName, artwork, trackName, lyrics, youtube, id }) => {
-            // // let combineId = `${artistName + "-" + trackName}`;
-            let urlID = id.replace(/\s/g, "");
             let url = `${"/lyrics/" + id}`;
             return (
               <SwiperSlide key={trackName} className="trending">
