@@ -10,46 +10,32 @@ const Trending = ({ trending }) => {
 
   return (
     <>
-      <div className="slide_button">
-        <h2>Trending Singles</h2>
-        <div className="slide_button">
-          <p onClick={() => swiperRef.current?.slidePrev()}>
-            <i className="fa-solid fa-chevron-left"></i>
-          </p>
-          <p onClick={() => swiperRef.current?.slideNext()}>
-            <i className="fa-solid fa-chevron-right"></i>
-          </p>
-        </div>
-      </div>
-      <Swiper
-        modules={[Navigation]}
-        spaceBetween={50}
-        slidesPerView={5}
-        onBeforeInit={(swiper) => {
-          swiperRef.current = swiper;
-        }}>
+      <h2>Trending Songs</h2>
+      <div className="new">
         {trending.map(
           ({ artistName, artwork, trackName, lyrics, youtube, id }) => {
             let url = `${"/lyrics/" + id}`;
             return (
-              <SwiperSlide key={trackName} className="trending">
-                <Link href={url}>
-                  <Image
-                    src={artwork}
-                    alt="trend"
-                    className="trending__image"
-                    width={220}
-                    height={220}
-                    priority
-                  />
-                </Link>
-                <div className="trending__track">{trackName}</div>
-                <div className="trending__artist">{artistName}</div>
-              </SwiperSlide>
+              <div key={trackName}>
+                <div className="trending">
+                  <Link href={url}>
+                    <Image
+                      src={artwork}
+                      alt="trend"
+                      className="trending__image"
+                      width={110}
+                      height={110}
+                      priority
+                    />
+                  </Link>
+                  <div className="trending__track">{trackName}</div>
+                  <div className="trending__artist">{artistName}</div>
+                </div>
+              </div>
             );
           }
         )}
-      </Swiper>
+      </div>
     </>
   );
 };

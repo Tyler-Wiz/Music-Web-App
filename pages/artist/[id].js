@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Header } from "../../components/Header";
 import ads from "../../img/fast-food-ads-mcdonalds-300x600.webp";
 import HeadDescription from "../../components/HeadDescription";
+import Navbar from "../../components/NavBar";
 
 export const getStaticPaths = async () => {
   const trackAll = [];
@@ -43,6 +44,7 @@ const ArtistPage = ({ data }) => {
         title={data[0].artistName + " - " + "Lyrics" + " | " + "tooXclusive"}
         content={"latest Lyrics from" + " " + data[0].artistName}
       />
+      <Navbar />
       <Header />
       <div className="artist_container">
         <div className="artist_container__imageArea">
@@ -75,7 +77,7 @@ const ArtistPage = ({ data }) => {
                     <div className="chart__track">{item.trackName}</div>
                   </div>
                   <div className="chart__artist">{item.artistName}</div>
-                  <div className="chart__container">
+                  <div className="love_container">
                     <i className="fa-solid fa-play"></i>
                     <i className="fa-regular fa-heart"></i>
                   </div>

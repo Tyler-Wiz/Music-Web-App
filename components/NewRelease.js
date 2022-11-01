@@ -15,9 +15,11 @@ const NewRelease = ({ newRelease }) => {
                   <Image
                     src={artwork}
                     alt="trend"
+                    width={110}
+                    height={100}
+                    layout="fill"
+                    objectFit="cover"
                     className="new__image"
-                    width={220}
-                    height={220}
                   />
                 </Link>
                 <div className="new__track">{trackName}</div>

@@ -5,6 +5,7 @@ import { getDocs, collection } from "firebase/firestore";
 import Link from "next/link";
 import Image from "next/image";
 import { sortArray } from "../modules/hooks/sortArray";
+import Navbar from "../components/NavBar";
 
 const chart = ({ chartAll }) => {
   let number = 1;
@@ -16,6 +17,7 @@ const chart = ({ chartAll }) => {
   return (
     <>
       <Header />
+      <Navbar />
       <div className="main_chart">
         <div className="main_chart__desc">
           <Image

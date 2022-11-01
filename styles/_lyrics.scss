@@ -90,17 +90,15 @@
             justify-content: space-between;
             width: 120rem;
             margin: 0 auto;
-            margin-bottom: 4rem;
 
 @include sm {
-  flex-direction: column;
+    @include FlexCenterWrap;
     width: 100%;
-        padding: 3rem;
 
 }
 
 @include md {
-    flex-direction: column;
+    @include FlexCenterWrap;
     width: 100%;
     padding: 3rem;
 }
@@ -114,7 +112,7 @@
             }
 
         &__image{
-            @include HeroImage(20rem, 20rem);
+            @include HeroImage(18rem, 18rem);
         }    
 }
 

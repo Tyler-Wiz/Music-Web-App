@@ -6,10 +6,12 @@ import ads from "../../img/fast-food-ads-mcdonalds-300x600.webp";
 import Image from "next/image";
 import Footer from "./Footer";
 import { Header } from "../Header";
+import Navbar from "../NavBar";
 
 const Main = ({ trending, newRelease, chart }) => {
   return (
     <>
+      <Navbar />
       <div className="main">
         <Header />
         <Trending trending={trending} />

@@ -8,6 +8,7 @@ import ReactPlayer from "react-player/youtube";
 import { AllSongsConfig } from "../../modules/hooks/allSongs-config";
 import Link from "next/link";
 import { FacebookShareButton, FacebookIcon } from "react-share";
+import Navbar from "../../components/NavBar";
 
 export const getStaticPaths = async () => {
   const trackAll = [];
@@ -62,6 +63,7 @@ const LyricsPage = ({ data }) => {
           " "
         }
       />
+      <Navbar />
       <Header />
       <div className="lyrics_wrapper">
         <Image
@@ -98,18 +100,20 @@ const LyricsPage = ({ data }) => {
         {related.map((item, i) => {
           let url = `${"/lyrics/" + item.id}`;
           return (
-            <Link href={url} key={i}>
-              <Image
-                src={item.artwork}
-                alt=""
-                width={130}
-                height={130}
-                className="related__image"
-                priority
-              />
-              <div className="trending__track">{item.trackName}</div>
-              <div className="trending__artist">{item.artistName}</div>
-            </Link>
+            <div key={i}>
+              <Link href={url}>
+                <Image
+                  src={item.artwork}
+                  alt=""
+                  width={120}
+                  height={120}
+                  className="related__image"
+                  priority
+                />
+                <div className="trending__track">{item.trackName}</div>
+                <div className="trending__artist">{item.artistName}</div>
+              </Link>
+            </div>
           );
         })}
       </div>

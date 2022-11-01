@@ -11,6 +11,7 @@
 
         @include sm {
             width: 100%;
+            margin-top: 7rem;
 
             h2 {
                 text-align: center;
@@ -50,11 +51,18 @@
 .trending{
      margin-bottom: 6rem;
      cursor: pointer;
-     width: 100%;
+
+     
+
 
     &__image {
-        @include HeroImage(21rem, 21rem);
+        @include HeroImage(20rem, 20rem);
         margin-bottom:.5rem;
+
+@include md {
+        @include HeroImage(10rem, 10rem);
+    }
+
     }
     &__artist {
         @include HeroArtist;
@@ -70,23 +78,34 @@
      margin-bottom: 5rem;
 
     @include sm {
-            display: flex;
-            flex-direction: column;
+            @include FlexCenterWrap;
             width: 100%;
             margin: 0 auto;
             margin-bottom: 1rem;
-
+            padding: 2rem;
         }
+
+            @include md {
+                    @include FlexCenterWrap;
+                    width: 100%;
+                    margin: 0 auto;
+                    margin-bottom: 1rem;
+                    padding: 2rem;
+                }
 
     &__container {
         margin-bottom: 7rem;
 
         @include sm {
              margin-bottom: 2rem;
-            }
+        }
     }
     &__image {
-        @include HeroImage(21rem, 21rem)
+        @include HeroImage(22rem, 22rem);
+
+    @include md {
+            @include HeroImage(15rem, 15rem);
+        }
     }
     &__artist {
         @include HeroArtist;
@@ -110,10 +129,18 @@
     @include FlexSpace;
     padding-right: 3rem;
     margin-bottom: 4rem;
+    margin: 0 auto;
 
     @include sm {
            flex-direction: column;
+        width: 100%;
         }
+
+       @include md {
+            flex-direction: column;
+                width: 100%;
+            margin: 0 auto;
+                 }
 }
 
 .chartAds {
@@ -142,7 +169,10 @@
         text-decoration: none;
         color: black;
 
-     
+     @include md {
+        width: 100%;
+        padding: 1rem;
+    }
 
         &:hover {
             background-color: #f5f5f6;
@@ -209,7 +239,6 @@
      cursor: pointer;
      text-decoration: none;
      color: black;
-
 
     @include sm {
         display: none
