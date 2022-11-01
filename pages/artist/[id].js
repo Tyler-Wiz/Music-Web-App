@@ -7,26 +7,9 @@ import ads from "../../img/fast-food-ads-mcdonalds-300x600.webp";
 import HeadDescription from "../../components/HeadDescription";
 import Navbar from "../../components/NavBar";
 
-export const getStaticPaths = async () => {
-  const trackAll = [];
-  const querySnapshot = await getDocs(collection(db, "Songs"));
-  querySnapshot.forEach((lyrics) => {
-    trackAll.push({ id: lyrics.id, ...lyrics.data() });
-  });
-  const paths = trackAll.map((doc) => {
-    return {
-      params: { id: doc.artistName.toString() },
-    };
-  });
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async ({ params }) => {
   const track = [];
-  const id = context.params.id;
+  const id = params.id;
   const q = query(collection(db, "Songs"), where("artistName", "==", id));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
