@@ -10,7 +10,7 @@ export const getServerSideProps = async (ctx) => {
   });
 
   const fields = trackAll.map((capsule) => ({
-    loc: `https://www.example.com/${capsule.id}`,
+    loc: `http://plug.tooxclusive.com/lyrics/${capsule.id}`,
     lastmod: new Date().toISOString(),
   }));
 

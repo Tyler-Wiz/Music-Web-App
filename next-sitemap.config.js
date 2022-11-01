@@ -1,8 +1,8 @@
 module.exports = {
-  siteUrl: "https://example.com",
+  siteUrl: "http://plug.tooxclusive.com/",
   generateRobotsTxt: true, // (optional)
   additionalSitemaps: [
-    `https://example.com/sitemap.xml`,
-    `https://example.com/post-sitemap.xml`,
+    `http://plug.tooxclusive.com/sitemap.xml`,
+    `http://plug.tooxclusive.com/post-sitemap.xml`,
   ],
 };
