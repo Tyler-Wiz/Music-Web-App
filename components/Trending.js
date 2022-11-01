@@ -23,7 +23,7 @@ const Trending = ({ trending }) => {
       </div>
       <Swiper
         modules={[Navigation]}
-        spaceBetween={5}
+        spaceBetween={50}
         slidesPerView={5}
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;

@@ -1,5 +1,5 @@
 .main_chart{
-    width: 80vw;
+    width: 130rem;
     margin: 4rem auto;
 
     &__desc{
@@ -10,4 +10,51 @@
         @include HeroImage(25rem, 25rem);
         margin: 0 2rem 2rem 2rem;
     }
+
+         @include sm {
+             flex-direction: column;
+             width: 100%;
+             padding: 2rem;
+             margin: 0 auto;
+
+
+            &__desc {
+                flex-direction: column;
+                padding: 3rem;
+                margin: 0 auto;
+                text-align: center
+                }
+
+                 &__image {
+                  @include HeroImage(18rem, 18rem);
+                margin: 0 auto;
+                    }
+         }
+                 @include md {
+                     flex-direction: column;
+                     width: 100%;
+                     padding: 2rem;
+                     margin: 0 auto;
+        
+        
+                     &__desc {
+                         flex-direction: column;
+                         padding: 3rem;
+                         margin: 0 auto;
+                         text-align: center
+                     }
+        
+                     &__image {
+                         @include HeroImage(18rem, 18rem);
+                         margin: 0 auto;
+                     }
+                 }
+
+                                  @include lg {
+                                      flex-direction: column;
+                                      width: 100%;
+                                      padding: 2rem;
+                                      margin: 0 auto;
+                                    
+                                  }
 }

@@ -11,7 +11,7 @@ const Chart = ({ chart }) => {
     .sort(sort_by("album", false, (a) => a.toUpperCase()));
 
   return (
-    <div className="chart">
+    <div className="main_chart">
       <h2>Chart</h2>
       <div>
         {featuredChart.map((item, i) => {
@@ -24,7 +24,7 @@ const Chart = ({ chart }) => {
                 <div className="chart__track">{item.trackName}</div>
               </div>
               <div className="chart__artist">{item.artistName}</div>
-              <div className="chart__container">
+              <div className="love_container">
                 <i className="fa-solid fa-play"></i>
                 <i className="fa-regular fa-heart"></i>
               </div>

@@ -7,6 +7,7 @@ import HeadDescription from "../../components/HeadDescription";
 import ReactPlayer from "react-player/youtube";
 import { AllSongsConfig } from "../../modules/hooks/allSongs-config";
 import Link from "next/link";
+import { FacebookShareButton, FacebookIcon } from "react-share";
 
 export const getStaticPaths = async () => {
   const trackAll = [];
@@ -101,8 +102,8 @@ const LyricsPage = ({ data }) => {
               <Image
                 src={item.artwork}
                 alt=""
-                width={150}
-                height={150}
+                width={130}
+                height={130}
                 className="related__image"
                 priority
               />

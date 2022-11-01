@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { AllSongsConfig } from "../modules/hooks/allSongs-config";
+import logo from "../img/logo.PNG";
 
 export const Header = () => {
   const [filteredData, setFilteredData] = useState([]);
@@ -37,7 +38,9 @@ export const Header = () => {
     <header className="header">
       <div className="header__container">
         <div className="header__logo">
-          <i className="fa-solid fa-record-vinyl"></i>
+          <Link href={"/"}>
+            <Image src={logo} width={100} height={70} alt="" />
+          </Link>
           <form className="search">
             <input
               placeholder="Search Lyrics"

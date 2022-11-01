@@ -1,23 +1,30 @@
 .footer{
-    font-size: 2rem;
+   padding-top: 3rem;
+   border-top: 1px solid gray;
+  display: flex;
+  justify-content: space-between;
+  height: 10rem;
 
-    &__artistSort{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 3rem;
-        border-top: 1px solid #f5f5f6;
+p {
+        font-size: 1.6rem;
+        margin-right: 3rem;
+        color: gray;
     }
 
-        &__allartist {
-            font-size: 2rem;
-            text-transform: uppercase;
-            margin-right: 3rem;
-        }
+  &__copyright{
+    display: flex;
+    justify-content: space-between;
 
-    &__artist{
-        font-size: 2rem;
-        text-transform: uppercase;
-        margin-left: 1rem;
+    p{
+    font-size: 1.8rem;
+    margin-right: 3rem;
+    color: gray;
     }
+  }
+
+}
+
+.fa-facebook-f, .fa-instagram, .fa-twitter{
+    font-size: 3.5rem;
+    margin-right: 3rem;
 }

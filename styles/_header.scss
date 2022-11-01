@@ -1,27 +1,24 @@
 .header {
-    width: 90%;
-    border-bottom: 1px solid #f5f5f6;
+     width: 120rem;
+     margin: 0rem auto;
+
+    @media (max-width: 480px) {
+            display: none;
+        }
+
+                @include md {
+                display: none;
+                }
    
     &__container {
         @include FlexSpace;
-        padding: 1rem 2rem;
-        width: 80%;
         margin: 0 auto;
+        margin-bottom: 5rem;
+       
     }
     &__logo{
         @include FlexCenter;
     }
-}
-
-.hero_header{
-     margin-bottom: 6rem;
-  
-    &__container {
-            @include FlexSpace;
-            width: 100%;
-            margin: 0 auto;
-            padding: 1rem 1rem;
-        }
 }
 
 .search {

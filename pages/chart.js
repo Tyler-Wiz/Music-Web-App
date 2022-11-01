@@ -41,7 +41,7 @@ const chart = ({ chartAll }) => {
                 <div className="chart__track">{item.trackName}</div>
               </div>
               <div className="chart__artist">{item.artistName}</div>
-              <div className="chart__container">
+              <div className="love_container">
                 <i className="fa-solid fa-play"></i>
                 <i className="fa-regular fa-heart"></i>
               </div>

@@ -1,11 +1,27 @@
 
 .lyrics {
     font-family: Poppins, sans-serif;
-    width: 80vw;
+    width: 120rem;
     margin: 4rem auto;
     display: flex;
     justify-content: space-between;
 
+    @include sm {
+            flex-direction: column;
+            width: 100%;
+            padding: 3rem;
+        }
+
+@include md {
+    flex-direction: column;
+    width: 100%;
+    padding: 3rem;
+    gap: 3rem;
+}
+
+@include lg {
+    padding: 3rem;
+}
     p {
         font-size: 2rem;
         line-height: 3rem;
@@ -19,10 +35,28 @@
 
 .lyrics_wrapper{
     display: flex;
-    width: 80vw;
+    width: 120rem;
     margin: 4rem auto;
     padding-bottom: 2rem;
     border-bottom: 1px solid #f5f5f6;
+
+
+  @include sm {
+            flex-direction: column;
+            width: 100%;
+            padding: 3rem;
+        }
+
+                @include md {
+                    flex-direction: column;
+                    width: 100%;
+                    padding: 3rem;
+                }
+
+
+                                @include lg {
+                                    padding: 3rem;
+                                }
 
     &__image{
         @include HeroImage(25rem, 25rem);
@@ -49,12 +83,30 @@
         }
 }
 
+
+
 .related{
         display: flex;
             justify-content: space-between;
-            width: 80vw;
+            width: 120rem;
             margin: 0 auto;
             margin-bottom: 4rem;
+
+@include sm {
+  flex-direction: column;
+    width: 100%;
+        padding: 3rem;
+
+}
+
+@include md {
+    flex-direction: column;
+    width: 100%;
+    padding: 3rem;
+}
+@include lg {
+    padding: 3rem;
+}
 
             a{
                 text-decoration: none;
@@ -62,15 +114,31 @@
             }
 
         &__image{
-            @include HeroImage(21rem, 21rem);
+            @include HeroImage(20rem, 20rem);
         }    
 }
 
 .related_desc{
-    width: 80vw;
+  width: 120rem;;
     margin: 0 auto;
     font-size: 2.3rem;
     color: #4141be;
     margin-bottom: 2.5rem;
     font-weight: 700;
+
+    @include md {
+            flex-direction: column;
+            width: 100%;
+            padding: 3rem;
+        }
+
+@include sm{
+            flex-direction: column;
+            width: 100%;
+            padding: 3rem;
+        }
+
+                @include lg {
+                    padding: 3rem;
+                }
 }
