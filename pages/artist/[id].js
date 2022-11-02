@@ -24,7 +24,7 @@ const ArtistPage = ({ data }) => {
   return (
     <>
       <HeadDescription
-        title={data[0].artistName + " - " + "Lyrics" + " | " + "tooXclusive"}
+        title={data[0].artistName + " - " + "Lyrics"}
         content={"latest Lyrics from" + " " + data[0].artistName}
       />
       <Navbar />

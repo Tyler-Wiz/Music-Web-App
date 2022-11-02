@@ -2,8 +2,6 @@ import React from "react";
 import Chart from "../Chart";
 import NewRelease from "../NewRelease";
 import Trending from "../Trending";
-import ads from "../../img/fast-food-ads-mcdonalds-300x600.webp";
-import Image from "next/image";
 import Footer from "./Footer";
 import { Header } from "../Header";
 import Navbar from "../NavBar";
@@ -14,11 +12,26 @@ const Main = ({ trending, newRelease, chart }) => {
       <Navbar />
       <div className="main">
         <Header />
+        <ins
+          class="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-1115876871453816"
+          data-ad-slot="1282142215"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         <Trending trending={trending} />
         <div className="chartAdsArea">
           <Chart chart={chart} />
           <div className="chartAds">
-            <Image src={ads} width={300} height={600} alt="" priority />
+            <ins
+              class="adsbygoogle"
+              style={{ display: "block" }}
+              data-ad-client="ca-pub-1115876871453816"
+              data-ad-slot="1282142215"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
           </div>
         </div>
         <NewRelease newRelease={newRelease} />

@@ -1,5 +1,5 @@
 import { db } from "../../firebase";
-import { getDocs, getDoc, collection, doc } from "firebase/firestore";
+import { getDoc, doc } from "firebase/firestore";
 import Image from "next/image";
 import parse from "html-react-parser";
 import { Header } from "../../components/Header";
@@ -7,7 +7,6 @@ import HeadDescription from "../../components/HeadDescription";
 import ReactPlayer from "react-player/youtube";
 import { AllSongsConfig } from "../../modules/hooks/allSongs-config";
 import Link from "next/link";
-import { FacebookShareButton, FacebookIcon } from "react-share";
 import Navbar from "../../components/NavBar";
 
 export const getServerSideProps = async ({ params }) => {
@@ -22,8 +21,6 @@ export const getServerSideProps = async ({ params }) => {
 const LyricsPage = ({ data }) => {
   const youtubeURL = `${"https://www.youtube.com/embed/" + data.youtube}`;
   const [allSongs] = AllSongsConfig();
-
-  console.log(data);
 
   const allRelated = allSongs.filter((item) => {
     if (item.artistName.includes(data.artistName)) {

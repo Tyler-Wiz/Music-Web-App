@@ -17,8 +17,6 @@ const NewRelease = ({ newRelease }) => {
                     alt="trend"
                     width={110}
                     height={100}
-                    layout="fill"
-                    objectFit="cover"
                     className="new__image"
                   />
                 </Link>
