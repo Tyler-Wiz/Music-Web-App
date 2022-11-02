@@ -104,14 +104,22 @@
         @include HeroImage(22rem, 22rem);
 
     @include md {
-            @include HeroImage(15rem, 15rem);
+            @include HeroImage(10rem, 10rem);
         }
     }
     &__artist {
         @include HeroArtist;
+
+        @include md {
+                font-size: 1rem;
+            }
     }
     &__track {
-        @include HeroTrack
+        @include HeroTrack;
+
+        @include md {
+                font-size: 1.3rem;
+            }
     }
 }
 

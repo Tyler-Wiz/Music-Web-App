@@ -12,6 +12,8 @@ export const getServerSideProps = async (ctx) => {
   const fields = trackAll.map((capsule) => ({
     loc: `http://plug.tooxclusive.com/lyrics/${capsule.id}`,
     lastmod: new Date().toISOString(),
+    changefreq: "Hourly",
+    priority: "1.0",
   }));
 
   return getServerSideSitemap(ctx, fields);

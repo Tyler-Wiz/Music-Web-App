@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }) {
         strategy="afterInteractive"
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1115876871453816"
         crossorigin="anonymous"
-      />{" "}
+      />
       <Component {...pageProps} />;
     </>
   );

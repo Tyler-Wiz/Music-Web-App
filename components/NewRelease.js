@@ -16,7 +16,7 @@ const NewRelease = ({ newRelease }) => {
                     src={artwork}
                     alt="trend"
                     width={110}
-                    height={100}
+                    height={110}
                     className="new__image"
                   />
                 </Link>

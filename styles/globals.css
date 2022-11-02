@@ -341,8 +341,8 @@
 }
 @media (max-width: 760px) {
   .new__image {
-    min-width: 15rem;
-    min-height: 15rem;
+    min-width: 10rem;
+    min-height: 10rem;
     border-radius: 0.5rem;
     -o-object-fit: cover;
        object-fit: cover;
@@ -353,11 +353,21 @@
   font-weight: 300;
   text-transform: capitalize;
 }
+@media (max-width: 760px) {
+  .new__artist {
+    font-size: 1rem;
+  }
+}
 .new__track {
   font-size: 1.6rem;
   margin: 0.5rem 0;
   font-weight: 600;
   text-transform: capitalize;
+}
+@media (max-width: 760px) {
+  .new__track {
+    font-size: 1.3rem;
+  }
 }
 
 .playlist__name {
