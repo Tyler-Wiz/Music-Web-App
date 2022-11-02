@@ -32,18 +32,14 @@ const LyricsPage = ({ data }) => {
 
   const related = allRelated.slice(0, 5);
 
+  const lyrics = data.lyrics.replace(/(<([^>]+)>)/gi, "");
+  const cutLyrics = lyrics.substring(0, 120);
+
   return (
     <>
       <HeadDescription
         title={data.artistName + " - " + data.trackName + " " + "Lyrics"}
-        content={
-          "latest Lyrics from" +
-          " " +
-          data.artistName +
-          " - " +
-          data.trackName +
-          " "
-        }
+        content={data.artistName + " " + data.trackName + " - " + cutLyrics}
       />
       <Navbar />
       <Header />
