@@ -107,11 +107,13 @@
 .searchItem__track {
   font-size: 1.8rem;
   font-weight: 400;
+  text-transform: capitalize;
 }
 .searchItem__artist {
   font-size: 1.4rem;
   font-weight: 400;
   color: grey;
+  text-transform: capitalize;
 }
 .searchItem__artist_image {
   width: 6rem;
@@ -937,4 +939,49 @@
 .burger-bar.unclicked {
   transform: rotate(0) translate(0);
   transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}
+
+.news {
+  margin-bottom: 5rem;
+  padding-top: 2rem;
+  display: flex;
+}
+.news__desc {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.news__featured {
+  position: relative;
+  width: 40rem;
+}
+
+.featured_contents {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.featured_contents__cat {
+  font-size: 2rem;
+  color: aqua;
+  font-weight: 600;
+  text-shadow: 2px 2px 2px black;
+}
+.featured_contents__title {
+  font-size: 4rem;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 2px black;
+}
+.featured_contents__desc {
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 500;
+  text-shadow: 2px 2px 2px black;
 }/*# sourceMappingURL=globals.css.map */

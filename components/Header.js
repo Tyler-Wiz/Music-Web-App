@@ -13,6 +13,7 @@ export const Header = () => {
   const [allSongs] = AllSongsConfig();
 
   const handleFilter = (event) => {
+    event.preventDefault();
     const searchWord = event.target.value;
     setWordEntered(searchWord);
     const newFilter = allSongs.filter((value) => {

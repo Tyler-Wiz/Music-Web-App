@@ -78,11 +78,13 @@
     &__track{
         font-size: 1.8rem;
         font-weight: 400;
+        text-transform: capitalize;
     }
     &__artist {
     font-size: 1.4rem;
      font-weight: 400;
-        color: grey;
+     color: grey;
+     text-transform: capitalize;
     }
     &__artist_image{
         width: 6rem;

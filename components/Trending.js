@@ -1,13 +1,7 @@
 import Image from "next/image";
-import { useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
-import "swiper/css";
 import Link from "next/link";
 
 const Trending = ({ trending }) => {
-  const swiperRef = useRef();
-
   return (
     <>
       <h2>Trending Songs</h2>
@@ -28,7 +22,11 @@ const Trending = ({ trending }) => {
                       priority
                     />
                   </Link>
-                  <div className="trending__track">{trackName}</div>
+                  <div className="trending__track">
+                    {trackName.length > 15
+                      ? trackName.substring(0, 15) + "..."
+                      : trackName}
+                  </div>
                   <div className="trending__artist">{artistName}</div>
                 </div>
               </div>

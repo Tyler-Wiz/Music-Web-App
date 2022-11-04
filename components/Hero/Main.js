@@ -5,6 +5,7 @@ import Trending from "../Trending";
 import Footer from "./Footer";
 import { Header } from "../Header";
 import Navbar from "../NavBar";
+import News from "../News";
 
 const Main = ({ trending, newRelease, chart }) => {
   return (
@@ -13,7 +14,7 @@ const Main = ({ trending, newRelease, chart }) => {
       <div className="main">
         <Header />
         <ins
-          class="adsbygoogle"
+          className="adsbygoogle"
           style={{ display: "block" }}
           data-ad-client="ca-pub-1115876871453816"
           data-ad-slot="1282142215"
@@ -25,7 +26,7 @@ const Main = ({ trending, newRelease, chart }) => {
           <Chart chart={chart} />
           <div className="chartAds">
             <ins
-              class="adsbygoogle"
+              className="adsbygoogle"
               style={{ display: "block" }}
               data-ad-client="ca-pub-1115876871453816"
               data-ad-slot="1282142215"
@@ -35,6 +36,7 @@ const Main = ({ trending, newRelease, chart }) => {
           </div>
         </div>
         <NewRelease newRelease={newRelease} />
+        <News />
         <Footer />
       </div>
     </>
