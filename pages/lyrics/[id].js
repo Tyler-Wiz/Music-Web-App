@@ -23,10 +23,7 @@ const LyricsPage = ({ data }) => {
   const [allSongs] = AllSongsConfig();
 
   const allRelated = allSongs.filter((item) => {
-    if (
-      item.artistName.includes(data.artistName) ||
-      item.trackName.includes(data.trackName)
-    ) {
+    if (item.artistName.includes(data.artistName)) {
       return item;
     }
   });
@@ -65,38 +62,44 @@ const LyricsPage = ({ data }) => {
       </div>
       <div className="lyrics">
         <div>{parse(data.lyrics)}</div>
-        <ReactPlayer
-          url={youtubeURL}
-          width="300px"
-          height="600px"
-          config={{
-            youtube: {
-              playerVars: { showinfo: 1, fs: 0, modestbranding: 1 },
-            },
-          }}
-        />
-      </div>
-      <p className="related_desc">Similar</p>
-      <div className="related">
-        {related.map((item, i) => {
-          let url = `${"/lyrics/" + item.id}`;
-          return (
-            <div key={i}>
-              <Link href={url}>
-                <Image
-                  src={item.artwork}
-                  alt=""
-                  width={120}
-                  height={120}
-                  className="related__image"
-                  priority
-                />
-                <div className="trending__track">{item.trackName}</div>
-                <div className="trending__artist">{item.artistName}</div>
-              </Link>
-            </div>
-          );
-        })}
+        <div>
+          <p className="related_desc">Similar</p>
+          <div className="related">
+            {related.map((item, i) => {
+              let url = `${"/lyrics/" + item.id}`;
+              return (
+                <div key={i}>
+                  <Link href={url} className="related__container">
+                    <Image
+                      src={item.artwork}
+                      alt=""
+                      width={30}
+                      height={30}
+                      className="related__image"
+                      priority
+                    />
+                    <div>
+                      <div className="trending__track">{item.trackName}</div>
+                      <div className="trending__artist">{item.artistName}</div>
+                    </div>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+          <div className="youtube">
+            <ReactPlayer
+              url={youtubeURL}
+              width="300px"
+              height="600px"
+              config={{
+                youtube: {
+                  playerVars: { showinfo: 1, fs: 0, modestbranding: 1 },
+                },
+              }}
+            />
+          </div>
+        </div>
       </div>
     </>
   );

@@ -87,56 +87,72 @@
 
 .related{
         display: flex;
-            justify-content: space-between;
-            width: 120rem;
-            margin: 0 auto;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-bottom: 2.5rem;
 
-@include sm {
-    @include FlexCenterWrap;
-    width: 100%;
+     &__container{
+        display: flex;
+        margin: 1rem auto;
+        border-bottom: .5px solid rgba(128, 128, 128, 0.346);
+        padding-bottom: 1rem;
 
+    @include md {
+        width: 100%;
+        justify-content: flex-start;
+     }
+    }
+
+    @include sm {
+        width: 100%;
+    }
+
+    @include md {
+        width: 100%;
+     }
+    @include lg {
+        padding: 3rem;
+     }
+    a{
+        text-decoration: none;
+        color: black;
+     }
+
+     &__image{
+        @include HeroImage(5rem, 5rem);
+        margin-right: 1rem;
+    }    
 }
 
-@include md {
-    @include FlexCenterWrap;
-    width: 100%;
-    padding: 3rem;
-}
-@include lg {
-    padding: 3rem;
-}
-
-            a{
-                text-decoration: none;
-                color: black;
-            }
-
-        &__image{
-            @include HeroImage(18rem, 18rem);
-        }    
-}
 
 .related_desc{
-  width: 120rem;;
-    margin: 0 auto;
     font-size: 2.3rem;
     color: #4141be;
     margin-bottom: 2.5rem;
     font-weight: 700;
 
+     @include md {
+           width: 100%;
+        }
+
+     @include sm{
+            width: 100%;
+        }
+
+     @include lg {
+         margin-bottom: .5rem;
+       }
+}
+
+.youtube{
+    
     @include md {
-            flex-direction: column;
-            width: 100%;
-            padding: 3rem;
+          display: none;
         }
-
-@include sm{
-            flex-direction: column;
-            width: 100%;
-            padding: 3rem;
+    
+        @include sm {
+            display: none;
         }
-
-                @include lg {
-                    padding: 3rem;
-                }
+    
+    
 }

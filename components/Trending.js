@@ -24,7 +24,7 @@ const Trending = ({ trending }) => {
                   </Link>
                   <div className="trending__track">
                     {trackName.length > 15
-                      ? trackName.substring(0, 15) + "..."
+                      ? trackName.substring(0, 12) + ".."
                       : trackName}
                   </div>
                   <div className="trending__artist">{artistName}</div>
