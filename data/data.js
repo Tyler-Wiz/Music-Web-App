@@ -1,22 +1,22 @@
 export const NavData = [
   {
     name: "Home",
-    icon: <i className="fa-solid fa-house"></i>,
+    // icon: <i className="fa-solid fa-house"></i>,
     path: "/",
   },
   {
     name: "News",
-    icon: <i className="fa-solid fa-list-check"></i>,
+    // icon: <i className="fa-solid fa-list-check"></i>,
     path: "/contact",
   },
   {
     name: "Album",
-    icon: <i className="fa-solid fa-compact-disc"></i>,
+    // icon: <i className="fa-solid fa-compact-disc"></i>,
     path: "/",
   },
   {
     name: "Chart",
-    icon: <i className="fa-solid fa-chart-simple"></i>,
+    // icon: <i className="fa-solid fa-chart-simple"></i>,
     path: "/chart",
   },
 ];

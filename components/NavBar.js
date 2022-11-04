@@ -36,31 +36,12 @@ const Navbar = () => {
     setWordEntered("");
   };
 
-  // toggle burger menu change
-  const updateMenu = () => {
-    if (!isMenuClicked) {
-      setBurgerClass("burger-bar clicked");
-      setMenuClass("menu visible");
-    } else {
-      setBurgerClass("burger-bar unclicked");
-      setMenuClass("menu hidden");
-    }
-    setIsMenuClicked(!isMenuClicked);
-  };
-
   return (
     <div className="remove_nav">
-      <Link href={"/"}>
-        <Image src={logo} width={100} height={70} alt="" />
-      </Link>
-      <nav className="navbar">
-        <div className="burger-menu" onClick={updateMenu}>
-          <div className={burger_class}></div>
-          <div className={burger_class}></div>
-          <div className={burger_class}></div>
-        </div>
-      </nav>
-      <div className={menu_class}>
+      <div className="navbar">
+        <Link href={"/"}>
+          <Image src={logo} width={100} height={70} alt="" />
+        </Link>
         <ul className="navbar__list">
           {NavData.map((item, i) => (
             <li className="navbar__container" key={i}>

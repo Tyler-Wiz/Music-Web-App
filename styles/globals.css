@@ -856,22 +856,19 @@
 }
 
 .navbar {
-  height: 5em;
   display: flex;
-  justify-content: flex-start;
-  padding: 1em;
-  position: absolute;
-  right: 0;
-  top: 0;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 0.4rem;
 }
 .navbar__list {
   list-style: none;
   padding: 4rem;
+  display: flex;
 }
 .navbar__container {
   display: flex;
-  margin-bottom: 2rem;
+  margin-right: 2rem;
   align-items: center;
 }
 .navbar__container a {
