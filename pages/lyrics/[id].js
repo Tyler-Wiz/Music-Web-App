@@ -23,7 +23,10 @@ const LyricsPage = ({ data }) => {
   const [allSongs] = AllSongsConfig();
 
   const allRelated = allSongs.filter((item) => {
-    if (item.artistName.includes(data.artistName)) {
+    if (
+      item.artistName.includes(data.artistName) ||
+      item.trackName.includes(data.trackName)
+    ) {
       return item;
     }
   });

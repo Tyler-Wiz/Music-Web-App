@@ -5,7 +5,6 @@ import Trending from "../Trending";
 import Footer from "./Footer";
 import { Header } from "../Header";
 import Navbar from "../NavBar";
-import News from "../News";
 
 const Main = ({ trending, newRelease, chart }) => {
   return (
@@ -36,7 +35,6 @@ const Main = ({ trending, newRelease, chart }) => {
           </div>
         </div>
         <NewRelease newRelease={newRelease} />
-        <News />
         <Footer />
       </div>
     </>
