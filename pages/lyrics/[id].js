@@ -9,6 +9,8 @@ import { AllSongsConfig } from "../../modules/hooks/allSongs-config";
 import Link from "next/link";
 import Navbar from "../../components/NavBar";
 
+export const config = { amp: true };
+
 export const getServerSideProps = async ({ params }) => {
   const id = params.id;
   const docRef = doc(db, "Songs", id);
