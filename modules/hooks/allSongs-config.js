@@ -1,25 +1,24 @@
 import { useState, useEffect } from "react";
 import { db } from "../../firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, onSnapshot } from "firebase/firestore";
 
 export const AllSongsConfig = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [allSongs, setAllSongs] = useState([]);
 
-  const getData = async () => {
-    const trackAll = [];
-    setIsLoading(true);
-    const querySnapshot = await getDocs(collection(db, "Songs"));
-    querySnapshot.forEach((lyrics) => {
-      trackAll.push({ id: lyrics.id, ...lyrics.data() });
-    });
-    setAllSongs([...trackAll]);
-    setIsLoading(false);
-  };
+  const colRef = collection(db, "Songs");
 
   useEffect(() => {
-    getData();
-  }, [isLoading]);
+    setIsLoading(true);
+    onSnapshot(colRef, (snapshot) => {
+      const trackAll = [];
+      snapshot.docs.forEach((doc) => {
+        trackAll.push({ id: doc.id, ...doc.data() });
+      });
+      setAllSongs([...trackAll]);
+    });
+    setIsLoading(false);
+  }, []);
 
   return [allSongs];
 };

@@ -4,7 +4,6 @@ import Image from "next/image";
 import parse from "html-react-parser";
 import { Header } from "../../components/Header";
 import HeadDescription from "../../components/HeadDescription";
-// import { AllSongsConfig } from "../../modules/hooks/allSongs-config";
 import Link from "next/link";
 import Navbar from "../../components/NavBar";
 
@@ -34,7 +33,7 @@ const LyricsPage = ({ data, relatedLinks }) => {
   const youtubeURL = `${"https://www.youtube.com/embed/" + data.youtube}`;
   let url = `${"/artist/" + data.artistName}`;
 
-  const related = relatedLinks.slice(0, 6);
+  const related = relatedLinks.slice(0, 4);
 
   const lyrics = data.lyrics.replace(/(<([^>]+)>)/gi, "");
   const cutLyrics = lyrics.substring(0, 120);
