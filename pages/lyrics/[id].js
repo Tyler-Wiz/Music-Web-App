@@ -88,16 +88,19 @@ const LyricsPage = ({ data }) => {
             })}
           </div>
           <div className="youtube">
-            <ReactPlayer
-              url={youtubeURL}
+            <iframe
+              className="w-auto sm:w-[80%] h-60 sm:h-80 sm:mx-4 sm:mb-4"
               width="300px"
               height="600px"
-              config={{
-                youtube: {
-                  playerVars: { showinfo: 1, fs: 0, modestbranding: 1 },
-                },
-              }}
-            />
+              src={
+                youtubeURL.includes("/watch?v=")
+                  ? youtubeURL.replace("/watch?v=", "/embed/")
+                  : youtubeURL
+              }
+              frameBorder="0"
+              loading="lazy"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen></iframe>
           </div>
         </div>
       </div>
