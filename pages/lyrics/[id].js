@@ -41,7 +41,14 @@ const LyricsPage = ({ data, relatedLinks }) => {
   return (
     <>
       <HeadDescription
-        title={data.artistName + " - " + data.trackName + " " + "Lyrics"}
+        title={
+          data.trackName +
+          " Lyrics " +
+          " by " +
+          data.artistName +
+          "  |  " +
+          "tooXclusive"
+        }
         content={data.artistName + " " + data.trackName + " - " + cutLyrics}
       />
       <Navbar />

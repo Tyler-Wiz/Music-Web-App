@@ -18,6 +18,7 @@ export const AllSongsConfig = () => {
       setAllSongs([...trackAll]);
     });
     setIsLoading(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return [allSongs];
