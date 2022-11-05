@@ -27,8 +27,9 @@ const LyricsPage = ({ data }) => {
     }
   });
 
-  let url = `${"/artist/" + data.artistName}`;
+  console.log(allSongs);
 
+  let url = `${"/artist/" + data.artistName}`;
   const related = allRelated.slice(0, 5);
 
   const lyrics = data.lyrics.replace(/(<([^>]+)>)/gi, "");
