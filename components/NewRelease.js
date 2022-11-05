@@ -20,8 +20,16 @@ const NewRelease = ({ newRelease }) => {
                     className="new__image"
                   />
                 </Link>
-                <div className="new__track">{trackName}</div>
-                <div className="new__artist">{artistName}</div>
+                <div className="new__track">
+                  {trackName.length > 15
+                    ? trackName.substring(0, 12) + ".."
+                    : trackName}
+                </div>
+                <div className="new__artist">
+                  {artistName.length > 15
+                    ? artistName.substring(0, 20) + ".."
+                    : artistName}
+                </div>
               </div>
             </div>
           );
