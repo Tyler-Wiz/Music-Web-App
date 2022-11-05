@@ -21,10 +21,6 @@ if (firebase.apps.length === 0) {
   app = firebase.app();
 }
 
-const auth = firebase.auth();
-
-export { auth };
-
 export const db = getFirestore();
 
 export const getAlbums = async () => {

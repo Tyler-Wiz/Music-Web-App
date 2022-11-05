@@ -1,10 +1,9 @@
 import { db } from "../../firebase";
-import { getDoc, doc } from "firebase/firestore";
+import { getDoc, doc, getDocs } from "firebase/firestore";
 import Image from "next/image";
 import parse from "html-react-parser";
 import { Header } from "../../components/Header";
 import HeadDescription from "../../components/HeadDescription";
-import ReactPlayer from "react-player/youtube";
 import { AllSongsConfig } from "../../modules/hooks/allSongs-config";
 import Link from "next/link";
 import Navbar from "../../components/NavBar";
@@ -63,6 +62,21 @@ const LyricsPage = ({ data }) => {
       <div className="lyrics">
         <div>{parse(data.lyrics)}</div>
         <div>
+          <div className="youtube">
+            <iframe
+              className="w-auto sm:w-[80%] h-60 sm:h-80 sm:mx-4 sm:mb-4"
+              width="300px"
+              height="600px"
+              src={
+                youtubeURL.includes("/watch?v=")
+                  ? youtubeURL.replace("/watch?v=", "/embed/")
+                  : youtubeURL
+              }
+              frameBorder="0"
+              loading="lazy"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen></iframe>
+          </div>
           <p className="related_desc">Similar</p>
           <div className="related">
             {related.map((item, i) => {
@@ -86,21 +100,6 @@ const LyricsPage = ({ data }) => {
                 </div>
               );
             })}
-          </div>
-          <div className="youtube">
-            <iframe
-              className="w-auto sm:w-[80%] h-60 sm:h-80 sm:mx-4 sm:mb-4"
-              width="300px"
-              height="600px"
-              src={
-                youtubeURL.includes("/watch?v=")
-                  ? youtubeURL.replace("/watch?v=", "/embed/")
-                  : youtubeURL
-              }
-              frameBorder="0"
-              loading="lazy"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen></iframe>
           </div>
         </div>
       </div>
