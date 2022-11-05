@@ -1,36 +1,40 @@
 import { db } from "../../firebase";
-import { getDoc, doc, getDocs } from "firebase/firestore";
+import { getDoc, doc, getDocs, collection } from "firebase/firestore";
 import Image from "next/image";
 import parse from "html-react-parser";
 import { Header } from "../../components/Header";
 import HeadDescription from "../../components/HeadDescription";
-import { AllSongsConfig } from "../../modules/hooks/allSongs-config";
+// import { AllSongsConfig } from "../../modules/hooks/allSongs-config";
 import Link from "next/link";
 import Navbar from "../../components/NavBar";
 
 export const getServerSideProps = async ({ params }) => {
   const id = params.id;
+  const trackAll = [];
+
+  const querySnapshot = await getDocs(collection(db, "Songs"));
+  querySnapshot.forEach((lyrics) => {
+    trackAll.push({ id: lyrics.id, ...lyrics.data() });
+  });
   const docRef = doc(db, "Songs", id);
   const docSnap = await getDoc(docRef);
-  return {
-    props: { data: docSnap.data() },
-  };
-};
 
-const LyricsPage = ({ data }) => {
-  const youtubeURL = `${"https://www.youtube.com/embed/" + data.youtube}`;
-  const [allSongs] = AllSongsConfig();
-
-  const allRelated = allSongs.filter((item) => {
-    if (item.artistName.includes(data.artistName)) {
+  const relatedLinks = trackAll.filter((item) => {
+    if (item.artistName.includes(docSnap.data().artistName)) {
       return item;
     }
   });
 
-  console.log(allSongs);
+  return {
+    props: { data: docSnap.data(), relatedLinks },
+  };
+};
 
+const LyricsPage = ({ data, relatedLinks }) => {
+  const youtubeURL = `${"https://www.youtube.com/embed/" + data.youtube}`;
   let url = `${"/artist/" + data.artistName}`;
-  const related = allRelated.slice(0, 5);
+
+  const related = relatedLinks.slice(0, 6);
 
   const lyrics = data.lyrics.replace(/(<([^>]+)>)/gi, "");
   const cutLyrics = lyrics.substring(0, 120);
