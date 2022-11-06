@@ -7,8 +7,47 @@ import HeadDescription from "../../components/HeadDescription";
 import Link from "next/link";
 import Navbar from "../../components/NavBar";
 
-export const getServerSideProps = async ({ params }) => {
-  const id = params.id;
+// export const getServerSideProps = async ({ params }) => {
+//   const id = params.id;
+//   const trackAll = [];
+
+//   const querySnapshot = await getDocs(collection(db, "Songs"));
+//   querySnapshot.forEach((lyrics) => {
+//     trackAll.push({ id: lyrics.id, ...lyrics.data() });
+//   });
+//   const docRef = doc(db, "Songs", id);
+//   const docSnap = await getDoc(docRef);
+
+//   const relatedLinks = trackAll.filter((item) => {
+//     if (item.artistName.includes(docSnap.data().artistName)) {
+//       return item;
+//     }
+//   });
+
+//   return {
+//     props: { data: docSnap.data(), relatedLinks },
+//   };
+// };
+
+export const getStaticPaths = async () => {
+  const trackAll = [];
+  const querySnapshot = await getDocs(collection(db, "Songs"));
+  querySnapshot.forEach((lyrics) => {
+    trackAll.push({ id: lyrics.id, ...lyrics.data() });
+  });
+  const paths = trackAll.map((doc) => {
+    return {
+      params: { id: doc.id.toString() },
+    };
+  });
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async (context) => {
+  const id = context.params.id;
   const trackAll = [];
 
   const querySnapshot = await getDocs(collection(db, "Songs"));
