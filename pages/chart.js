@@ -6,6 +6,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { sortArray } from "../modules/hooks/sortArray";
 import Navbar from "../components/NavBar";
+import fav from "../img/favorite.png";
+import play from "../img/play.png";
 
 const chart = ({ chartAll }) => {
   let number = 1;
@@ -44,8 +46,8 @@ const chart = ({ chartAll }) => {
               </div>
               <div className="chart__artist">{item.artistName}</div>
               <div className="love_container">
-                <i className="fa-solid fa-play"></i>
-                <i className="fa-regular fa-heart"></i>
+                <Image alt="" src={play} width={15} height={15} />
+                <Image alt="" src={fav} width={22} height={22} />
               </div>
             </Link>
           );

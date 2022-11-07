@@ -35,7 +35,6 @@ const Main = ({ trending, newRelease, chart }) => {
           </div>
         </div>
         <NewRelease newRelease={newRelease} />
-        <Footer />
       </div>
     </>
   );
