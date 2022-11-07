@@ -48,31 +48,17 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const trackAll = [];
-
-  const querySnapshot = await getDocs(collection(db, "Songs"));
-  querySnapshot.forEach((lyrics) => {
-    trackAll.push({ id: lyrics.id, ...lyrics.data() });
-  });
   const docRef = doc(db, "Songs", id);
   const docSnap = await getDoc(docRef);
 
-  const relatedLinks = trackAll.filter((item) => {
-    if (item.artistName.includes(docSnap.data().artistName)) {
-      return item;
-    }
-  });
-
   return {
-    props: { data: docSnap.data(), relatedLinks },
+    props: { data: docSnap.data() },
   };
 };
 
-const LyricsPage = ({ data, relatedLinks }) => {
+const LyricsPage = ({ data }) => {
   const youtubeURL = `${"https://www.youtube.com/embed/" + data.youtube}`;
   let url = `${"/artist/" + data.artistName}`;
-
-  const related = relatedLinks.slice(0, 4);
 
   const lyrics = data.lyrics.replace(/(<([^>]+)>)/gi, "");
   const cutLyrics = lyrics.substring(0, 120);
@@ -128,7 +114,7 @@ const LyricsPage = ({ data, relatedLinks }) => {
               allowFullScreen></iframe>
           </div>
           <p className="related_desc">Similar</p>
-          <div className="related">
+          {/* <div className="related">
             {related.map((item, i) => {
               let url = `${"/lyrics/" + item.id}`;
               return (
@@ -150,7 +136,7 @@ const LyricsPage = ({ data, relatedLinks }) => {
                 </div>
               );
             })}
-          </div>
+          </div> */}
         </div>
       </div>
     </>
