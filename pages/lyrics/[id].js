@@ -6,28 +6,7 @@ import { Header } from "../../components/Header";
 import HeadDescription from "../../components/HeadDescription";
 import Link from "next/link";
 import Navbar from "../../components/NavBar";
-
-// export const getServerSideProps = async ({ params }) => {
-//   const id = params.id;
-//   const trackAll = [];
-
-//   const querySnapshot = await getDocs(collection(db, "Songs"));
-//   querySnapshot.forEach((lyrics) => {
-//     trackAll.push({ id: lyrics.id, ...lyrics.data() });
-//   });
-//   const docRef = doc(db, "Songs", id);
-//   const docSnap = await getDoc(docRef);
-
-//   const relatedLinks = trackAll.filter((item) => {
-//     if (item.artistName.includes(docSnap.data().artistName)) {
-//       return item;
-//     }
-//   });
-
-//   return {
-//     props: { data: docSnap.data(), relatedLinks },
-//   };
-// };
+import { AllSongsConfig } from "../../modules/hooks/allSongs-config";
 
 export const getStaticPaths = async () => {
   const trackAll = [];
@@ -59,6 +38,16 @@ export const getStaticProps = async (context) => {
 const LyricsPage = ({ data }) => {
   const youtubeURL = `${"https://www.youtube.com/embed/" + data.youtube}`;
   let url = `${"/artist/" + data.artistName}`;
+
+  const [allSongs] = AllSongsConfig();
+
+  const related = allSongs.filter((item) => {
+    if (item.artistName.includes(data.artistName)) {
+      return item;
+    }
+  });
+
+  const relatedPost = related.slice(0, 5);
 
   const lyrics = data.lyrics.replace(/(<([^>]+)>)/gi, "");
   const cutLyrics = lyrics.substring(0, 120);
@@ -98,24 +87,9 @@ const LyricsPage = ({ data }) => {
       <div className="lyrics">
         <div>{parse(data.lyrics)}</div>
         <div>
-          <div className="youtube">
-            <iframe
-              className="w-auto sm:w-[80%] h-60 sm:h-80 sm:mx-4 sm:mb-4"
-              width="300px"
-              height="600px"
-              src={
-                youtubeURL.includes("/watch?v=")
-                  ? youtubeURL.replace("/watch?v=", "/embed/")
-                  : youtubeURL
-              }
-              frameBorder="0"
-              loading="lazy"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen></iframe>
-          </div>
           <p className="related_desc">Similar</p>
-          {/* <div className="related">
-            {related.map((item, i) => {
+          <div className="related">
+            {relatedPost.map((item, i) => {
               let url = `${"/lyrics/" + item.id}`;
               return (
                 <div key={i}>
@@ -136,7 +110,21 @@ const LyricsPage = ({ data }) => {
                 </div>
               );
             })}
-          </div> */}
+          </div>
+          <div className="youtube">
+            <iframe
+              width="300px"
+              height="600px"
+              src={
+                youtubeURL.includes("/watch?v=")
+                  ? youtubeURL.replace("/watch?v=", "/embed/")
+                  : youtubeURL
+              }
+              frameBorder="0"
+              loading="lazy"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen></iframe>
+          </div>
         </div>
       </div>
     </>
