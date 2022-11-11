@@ -8,25 +8,8 @@ import Link from "next/link";
 import Navbar from "../../components/NavBar";
 import { AllSongsConfig } from "../../modules/hooks/allSongs-config";
 
-export const getStaticPaths = async () => {
-  const trackAll = [];
-  const querySnapshot = await getDocs(collection(db, "Songs"));
-  querySnapshot.forEach((lyrics) => {
-    trackAll.push({ id: lyrics.id, ...lyrics.data() });
-  });
-  const paths = trackAll.map((doc) => {
-    return {
-      params: { id: doc.id.toString() },
-    };
-  });
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
-export const getStaticProps = async (context) => {
-  const id = context.params.id;
+export const getServerSideProps = async ({ params }) => {
+  const id = params.id;
   const docRef = doc(db, "Songs", id);
   const docSnap = await getDoc(docRef);
 

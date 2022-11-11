@@ -24,7 +24,7 @@ export default function Home({ trending, newRelease, chart, trackAll }) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const trackAll = [];
   const querySnapshot = await getDocs(collection(db, "Songs"));
   querySnapshot.forEach((lyrics) => {
